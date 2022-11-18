@@ -1,4 +1,5 @@
-### EVENTS
+# EVENTS
 ## USER
-# USER.CREATE
+### USER.CREATE
 Body: `User`
+Publisher: `user-service`
