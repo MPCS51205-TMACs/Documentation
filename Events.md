@@ -1,10 +1,10 @@
 # EVENTS
 ## USER
-### USER.CREATE  
+### user.create  
 Body: `User`   
 Exchange Type: `fanout`  
 Publishers: `user-service`  
-### USER.UPDATE
+### user.update
 Body:  
 ```  
 {
@@ -14,7 +14,7 @@ user: User
 ```  
 Exchange Type: `fanout`  
 Publishers: `user-service`  
-### USER.DELETE
+### user.delete
 Body:  
 ```  
 {
@@ -26,34 +26,29 @@ Publishers: `user-service`
 
 
 ## AUCTION
-### AUCTION.START
+### auction.start
 
 Body:  
 ```  
 {
-sendTo: 'seller' or 'bidder'
-userId: UUID
-itemId: UUID
+auction: Auction
 timeToStart: String
 }  
 ```  
-Exchange Type: `fanout`  
+Exchange Type: `direct`  
 Publishers: `auction-service` 
 
-### AUCTION.END
+### auction.end
 Body:  
 ```  
 {
-sendTo: "seller" or "bidder"
-userId: UUID
-itemId: UUID
 auction: Auction
 }  
 ```  
 Exchange Type: `fanout`  
 Publishers: `auction-service` 
 
-### AUCTION.NEW-HIGH-BID
+### auction.new-high-bid
 Body:  
 ```  
 {
@@ -64,10 +59,10 @@ oldBid: Bid
 newBid: Bid
 }  
 ```  
-Exchange Type: `fanout`  
+Exchange Type: `direct`  
 Publishers: `auction-service` 
 
-### AUCTION.HIGH-BID-INACTIVE
+### auction.high-bid-inactive
 Body:  
 ```  
 {
@@ -77,12 +72,12 @@ inactiveBid: Bid
 item: Item
 }  
 ```  
-Exchange Type: `fanout`  
+Exchange Type: `direct`  
 Publishers: `auction-service` 
 
 
 ## WATCHLIST
-### WATCHLIST.MATCH
+### watchlist.match
 Body:  
 ```  
 {
@@ -90,12 +85,12 @@ userId: UUID
 itemId: UUID   
 }  
 ```  
-Exchange Type: `fanout`  
+Exchange Type: `direct`  
 Publishers: `watchlist-service` 
 
 ## ITEM
-### ITEM.COUNTERFEIT
-### ITEM.INAPPROPRIATE
-### ITEM.CHANGE
+### item.counterfeit
+### item.innapropriate
+### item.change
 
 
