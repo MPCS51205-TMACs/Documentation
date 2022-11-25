@@ -102,5 +102,7 @@ itemId: UUID
 update: Item
 }
 ```
+Exchange Type: `direct`
+Publishers: `item-service`
 
 
