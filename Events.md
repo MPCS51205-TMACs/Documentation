@@ -89,8 +89,18 @@ Exchange Type: `direct`
 Publishers: `watchlist-service` 
 
 ## ITEM
-### item.counterfeit
-### item.innapropriate
-### item.change
+### item.create
+Body: `Item`
+Exchange Type: `direct`
+Publishers: `item-service`
+
+### item.update
+Body:
+```
+{
+itemId: UUID
+update: Item
+}
+```
 
 
